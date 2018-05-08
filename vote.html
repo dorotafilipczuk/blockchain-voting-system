@@ -6,13 +6,12 @@
   </head>
   <body>
 
-  <h2>AIC Awayday</h2>
-  <h3>Best Talk - Voting System</h3>
+    <h2>AIC Awayday</h2>
+    <h3>Best Talk - Voting System</h3>
 
-  <form action="/action_page.php">
-
-    <div class="container">
-      <label for="token"><b>What was your favourite talk today?</b></label>
+    <form action="/action_page.php">
+      <div class="container">
+        <label for="token"><b>What was your favourite talk today?</b></label>
         <br>
         <input type="radio" name="talk" value="edoardo">
           Game tree search techniques<br>
@@ -26,13 +25,16 @@
           Beamr<br>
         <input type="radio" name="talk" value="jie">
           A little Math for entertainment
-      <button type="submit">Vote!</button>
-    </div>
+        <input type="button" onclick="voteForCandidate(talk)">
+      </div>
+    </form>
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" class="cancelbtn">Cancel</button>
     </div>
-  </form>
 
   </body>
 </html>
+
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="vote.js"></script>
