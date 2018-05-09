@@ -9,6 +9,8 @@ contract Voting {
 
   mapping (bytes32 => uint8) public votesReceived;
 
+  mapping(address => bool) public voters;
+
   /* Solidity doesn't let you pass in an array of strings in the constructor (yet).
   We will use an array of bytes32 instead to store the list of candidates
   */
@@ -32,7 +34,13 @@ contract Voting {
   // This function increments the vote count for the specified candidate. This
   // is equivalent to casting a vote
   function voteForCandidate(bytes32 candidate) public {
+    // Require valid candidate
     require(validCandidate(candidate));
+    // Can only vote once
+    if (voters[msg.sender] == true)
+        revert();
+    voters[msg.sender] = true;
+    // Vote
     votesReceived[candidate] += 1;
   }
 
