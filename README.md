@@ -4,7 +4,7 @@
 ### To do
 
 - [ ] Connect to nice front end
-- [ ] Assign everyone an ID
-- [ ] Add server
+- [x] Assign everyone an ID
+- [x] Add server
 - [ ] Mobile friendly (?)
 - [ ] Write deployment instructions
